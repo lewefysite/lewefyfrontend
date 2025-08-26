@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@animaapp/vite-plugin-screen-graph": "^0.1.5",
+    "vitepress": "^1.6.4"
     "@storybook/addon-essentials": "^8.4.6",
     "@storybook/addon-interactions": "^8.4.6",
     "@storybook/addon-onboarding": "^8.4.6",
