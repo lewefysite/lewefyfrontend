@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -28,6 +30,7 @@
     "globals": "15.12.0",
     "storybook": "^8.4.6",
     "tailwindcss": "3.4.16",
-    "vite": "6.0.4"
+    "vite": "6.0.4",
+    "vitepress": "^1.0.0"
   }
 }
