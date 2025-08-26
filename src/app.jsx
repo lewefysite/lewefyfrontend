@@ -1,30 +1,24 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import { Routes, Route } from 'react-router-dom';
 
-function PrivateRoute({ children }) {
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  return isAuthenticated ? children : <Navigate to="/login" />;
-}
+// Importação centralizada das telas
+import { LewefyCom } from './screens/LewefyCom/LewefyCom';
+import { LewefyComOProjeto } from './screens/LewefyComOProjeto/LewefyComOProjeto';
+import { LewefyComRecursos } from './screens/LewefyComRecursos/LewefyComRecursos';
+// Adicione aqui os novos imports conforme forem criados
+// Exemplo:
+// import { LewefyComLogin } from './screens/LewefyComLogin/LewefyComLogin';
 
-export default function App() {
+function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/dashboard"
-          element={
-            <PrivateRoute>
-              <Dashboard />
-            </PrivateRoute>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<LewefyCom />} />
+      <Route path="/o-projeto" element={<LewefyComOProjeto />} />
+      <Route path="/recursos" element={<LewefyComRecursos />} />
+      {/* Rotas futuras */}
+      {/* <Route path="/login" element={<LewefyComLogin />} /> */}
+    </Routes>
   );
 }
+
+export default App;
