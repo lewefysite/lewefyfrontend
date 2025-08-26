@@ -5,6 +5,7 @@
   "source": "./index.html",
   "type": "module",
   "scripts": {
+    "docs:build": "vitepress build docs"
     "dev": "vite",
     "docs:build": "vitepress build docs"
     "build": "vite build",
