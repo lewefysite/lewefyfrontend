@@ -1,16 +1,13 @@
 {
-  "name": "lewefy-app",
+  "name": "lewefy-website",
+  "private": true,
   "version": "1.0.0",
-  "description": "Plataforma de acolhimento e desabafos.",
-  "source": "./index.html",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
     "prop-types": "^15.8.1",
@@ -20,19 +17,16 @@
     "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
-    "@animaapp/vite-plugin-screen-graph": "^0.1.5",
-    "@storybook/addon-essentials": "^8.4.6",
-    "@storybook/addon-interactions": "^8.4.6",
-    "@storybook/addon-onboarding": "^8.4.6",
-    "@storybook/react-vite": "^8.4.6",
-    "@vitejs/plugin-react": "4.3.4",
-    "esbuild": "0.24.0",
-    "globals": "15.12.0",
-    "storybook": "^8.4.6",
-    "tailwindcss": "3.4.16",
-    "vite": "6.0.4",
-    "vitepress": "^1.6.4",
-    "autoprefixer": "^10.4.16"
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.5"
   }
 }
-
