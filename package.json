@@ -5,9 +5,7 @@
   "source": "./index.html",
   "type": "module",
   "scripts": {
-    "docs:build": "vitepress build docs"
     "dev": "vite",
-    "docs:build": "vitepress build docs"
     "build": "vite build",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
@@ -23,7 +21,6 @@
   },
   "devDependencies": {
     "@animaapp/vite-plugin-screen-graph": "^0.1.5",
-    "vitepress": "^1.6.4"
     "@storybook/addon-essentials": "^8.4.6",
     "@storybook/addon-interactions": "^8.4.6",
     "@storybook/addon-onboarding": "^8.4.6",
@@ -34,9 +31,8 @@
     "storybook": "^8.4.6",
     "tailwindcss": "3.4.16",
     "vite": "6.0.4",
-    "vitepress": "^1.0.0"
     "vitepress": "^1.6.4",
-"autoprefixer": "^10.4.16"
-
+    "autoprefixer": "^10.4.16"
   }
 }
+
