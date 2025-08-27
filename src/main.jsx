@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 // Se App.jsx estiver na raiz do projeto (como você mostrou antes):
-import App from '/app.jsx';
+import App from './App.jsx';
 // Caso mova o App para src depois, troque para:
 // import App from './App.jsx';
 
