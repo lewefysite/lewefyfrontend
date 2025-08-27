@@ -1,5 +1,11 @@
 {
-  "framework": "vitepress",
-  "buildCommand": "npm run docs:build",
-  "outputDirectory": "docs/.vitepress/dist"
+  "builds": [
+    {
+      "src": "vite.config.ts",
+      "use": "@vercel/vite"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
+  ]
 }
