@@ -1,11 +1,18 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './utils/scrolltotop.jsx';
+import HomePage from './pages/homepage.jsx';
+import NotFoundPage from './pages/notfoundpage.jsx';
 
-function App() {
+export default function App() {
   return (
-    <main className="min-h-screen bg-white text-gray-900 flex items-center justify-center">
-      <h1 className="text-3xl font-bold">Lewefy | Acolhimento e Bem-Estar</h1>
-    </main>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
   );
 }
 
-export default App;
