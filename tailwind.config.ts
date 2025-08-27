@@ -4,7 +4,8 @@ const config: Config = {
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
-    './public/**/*.html'
+    './public/**/*.html',
+    './**/*.{md,html}' // opcional, cobre casos fora de src/public
   ],
   theme: {
     extend: {
