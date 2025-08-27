@@ -21,10 +21,10 @@ export default function HomePage() {
               <div className="flex flex-col md:flex-row items-center gap-10 px-8 py-16 bg-[#d9f2ff]">
                 <div className="flex flex-col items-start gap-8 flex-1">
                   <div className="flex flex-col max-w-2xl gap-4">
-                    <h1 className="font-heading-headline-1 text-[#f7902b]">
+                    <h1 className="text-4xl font-bold text-[#f7902b] leading-tight">
                       Fale o Que Está <br /> no Seu Coração
                     </h1>
-                    <p className="font-body-regular-body-2 text-neutralgrey">
+                    <p className="text-base text-neutralgrey">
                       Um espaço seguro e sem julgamentos para você expressar seus
                       sentimentos, aliviar a mente e encontrar conforto ao compartilhar
                       suas emoções.
@@ -45,10 +45,10 @@ export default function HomePage() {
             </div>
 
             <SearchViewModal
-              caret="/img/caret-1.svg"
+              caret="/icons/caret-1.svg"
               className="!h-[195px] !absolute right-0 top-[109px] bg-[#ffcc9a] w-full max-w-[545px]"
               headerClassName="!bg-[#f7902b]"
-              horizontalFullDivider="/img/divider-2.svg"
+              horizontalFullDivider="/icons/divider-2.svg"
               iconButtonBuildingBlocksIconIcon={<Icon13 className="w-6 h-6" color="#49454F" />}
               inputText="Publique seu desabafo"
               labelText="input-text"
@@ -59,7 +59,7 @@ export default function HomePage() {
             <Type className="absolute w-4 h-4 top-[190px] right-[500px]" />
 
             <div className="flex w-full h-[118px] mt-20 bg-[#ffd9b5] items-center justify-center">
-              <p className="font-body-regular-body-2 text-neutralblack text-center max-w-3xl">
+              <p className="text-base text-neutralblack text-center max-w-3xl">
                 “Conheça todas as teorias, domine todas as técnicas, mas ao tocar
                 uma alma humana, seja apenas outra alma humana.”
                 <br />
