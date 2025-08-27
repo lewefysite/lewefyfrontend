@@ -1,4 +1,4 @@
-import HomePage from './pages/HomePage.jsx';
+import HomePage from './pages/homepage.jsx';
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/Button/Button";
