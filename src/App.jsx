@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import ScrollToTop from './utils/scrolltotop.jsx';
+import ScrollToTop from './util/scrolltotop.jsx';
 import HomePage from './pages/homepage.jsx';
 import NotFoundPage from './pages/notfoundpage.jsx';
 
