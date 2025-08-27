@@ -3,6 +3,7 @@ import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export default function RegisterForm() {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [message, setMessage] = useState('');
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const handleInputChange = (e) => {
@@ -10,7 +11,6 @@ export default function RegisterForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Envolvemos a função em useCallback para otimização
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
@@ -20,17 +20,14 @@ export default function RegisterForm() {
         return;
       }
 
-      // 1. Obter o token do reCAPTCHA para a ação 'register'
       const recaptchaToken = await executeRecaptcha('register');
 
-      // 2. Montar o corpo da requisição com os dados do formulário E o token
       const body = {
         ...formData,
-        recaptchaToken, // <-- ENVIANDO O TOKEN PARA O BACKEND
+        recaptchaToken,
       };
-      
+
       try {
-        // 3. Enviar para a API
         const response = await fetch('/api/auth/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -39,28 +36,49 @@ export default function RegisterForm() {
 
         const result = await response.json();
 
-        if (!response.ok) {
-          // Tratar erros vindos do backend (ex: e-mail já existe, reCAPTCHA falhou)
-          alert(`Erro: ${result.message}`);
+        if (response.ok) {
+          setMessage('Cadastro realizado com sucesso!');
         } else {
-          // Sucesso!
-          alert(result.message);
+          setMessage(result.error || 'Erro ao cadastrar.');
         }
       } catch (error) {
-        console.error('Falha ao registrar:', error);
-        alert('Ocorreu um erro. Tente novamente.');
+        console.error('Erro na requisição:', error);
+        setMessage('Erro inesperado. Tente novamente.');
       }
     },
-    [executeRecaptcha, formData]
+    [formData, executeRecaptcha]
   );
 
   return (
-    <form onSubmit={handleSubmit}>
-      {/* Seus inputs para nome, email, senha */}
-      <input type="text" name="name" placeholder="Nome" onChange={handleInputChange} required />
-      <input type="email" name="email" placeholder="E-mail" onChange={handleInputChange} required />
-      <input type="password" name="password" placeholder="Senha" onChange={handleInputChange} required />
-      <button type="submit">Registrar</button>
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <input
+        type="text"
+        name="name"
+        placeholder="Nome"
+        value={formData.name}
+        onChange={handleInputChange}
+        className="border p-2 w-full"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="E-mail"
+        value={formData.email}
+        onChange={handleInputChange}
+        className="border p-2 w-full"
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Senha"
+        value={formData.password}
+        onChange={handleInputChange}
+        className="border p-2 w-full"
+      />
+      <button type="submit" className="bg-brandprimary text-white px-4 py-2 rounded">
+        Cadastrar
+      </button>
+      {message && <p className="text-sm text-red-500 mt-2">{message}</p>}
     </form>
   );
 }
