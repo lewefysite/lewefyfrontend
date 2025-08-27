@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../components/ui/Button/Button";
-import { Frame } from "../components/layout/Frame/Frame";
-import { Footer } from "../components/layout/Footer/Footer";
-import { SearchViewModal } from "../components/ui/SearchViewModal/SearchViewModal";
-import { Yesconsultalog } from "../components/ui/Yesconsultalog/Yesconsultalog";
-import { BotODesabafar } from "../icons/BotODesabafar";
-import { Type } from "../icons/Type";
-import { Close } from "../icons/Close";
-import { Icon13 } from "../icons/Icon13";
+import { Button } from "@/components/ui/Button/Button";
+import { Frame } from "@/components/layout/Frame/Frame";
+import { Footer } from "@/components/layout/Footer/Footer";
+import { SearchViewModal } from "@/components/ui/SearchViewModal/SearchViewModal";
+import { Yesconsultalog } from "@/components/ui/Yesconsultalog/Yesconsultalog";
+import { BotODesabafar } from "@/icons/BotODesabafar";
+import { Type } from "@/icons/Type";
+import { Close } from "@/icons/Close";
+import { Icon13 } from "@/icons/Icon13";
 
 export default function HomePage() {
   return (
