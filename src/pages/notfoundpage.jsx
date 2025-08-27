@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BotODesabafar } from '../icons/BotODesabafar'; // Ou qualquer ícone leve que represente empatia
+import { BotODesabafar } from '@/icons/BotODesabafar'; // Ícone leve que representa empatia
 
 export default function NotFoundPage() {
   return (
